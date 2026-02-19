@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 70% 40%, rgb(59, 11, 120) 0%, rgb(11, 15, 43) 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.logo span {
+  color: rgb(255, 122, 89);
+  font-size: 20px;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.subtitle {
+  color: rgb(181, 181, 195);
+  margin-bottom: 35px;
+}
+.upload-box {
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.upload-box p {
+  color: rgb(207, 207, 230);
+  font-size: 14px;
+}
+.upload-info {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  background: rgb(255, 122, 89);
+  color: rgb(27, 27, 27);
+  transition: 0.3s;
+}

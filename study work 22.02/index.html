@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxWatches - Premium Timepieces</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .top-banner {
+            background-color: rgb(5, 50, 5);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .banner-content .separator {
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: rgb(4, 61, 4);
+            text-decoration: none;
+            display: block;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #b8860b;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .header-icons a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: #b8860b;
+        }
+
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: black;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            color: black;
+        }
+        .shop-now-btn {
+            background-color: #b8860b;
+            color: black;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .shop-now-btn:hover {
+            background-color: #a2760a;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .section-title::after {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background-color: #b8860b;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-badge {
+            background-color: rgb(3, 48, 3);
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            margin-bottom: 15px;
+        }
+
+        .msrp {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .was {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .now {
+            color: #b8860b;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .add-to-cart-btn {
+            background-color: rgb(3, 48, 3);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #b8860b;
+        }
+
+        .newsletter-section {
+            background-color: #f5f5f5;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .newsletter-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .newsletter-container p {
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: rgb(3, 48, 3);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #b8860b;
+        }
+
+        .footer {
+            background-color: rgb(2, 38, 2);
+            color: #ddd;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .footer-column p {
+            line-height: 1.6;
+            color: #aaa;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #b8860b;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .social-icons a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #b8860b;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-banner">
+        <div class="banner-content">
+            <span>Free Shipping WORLDWIDE</span>
+            <span class="separator">|</span>
+            <span>Free In-store Returns</span>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-container">
+            <a href="https://www.rolex.com/" class="logo" target="_blank">ROLEX</a>
+            <nav class="main-nav">
+                <a href="https://www.rolex.com/" target="_blank">Home</a>
+                <a href="https://www.rolex.com/watches" target="_blank">Shop</a>
+                <a href="https://www.rolex.com/rolex-watches/best-sellers" target="_blank">Best Sellers</a>
+                <a href="https://www.rolex.com/new-watches" target="_blank">New Arrivals</a>
+                <a href="https://www.rolex.com/rolex-and-art/watchmaking" target="_blank">Brands</a>
+                <a href="https://www.rolex.com/rolex-watches/collections" target="_blank">Collections</a>
+            </nav>
+            <div class="header-icons">
+                <a href="https://www.rolex.com/search" target="_blank"><i class="fas fa-search"></i></a>
+                <a href="https://www.rolex.com/rolex-world/your-rolex-account" target="_blank"><i class="fas fa-user"></i></a>
+                <a href="https://www.rolex.com/shopping" target="_blank"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="WhatsApp Video 2026-01-23 at 09.08.18.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Timeless Elegance</h1>
+            <p>Discover our exclusive collection of luxury watches</p>
+            <a href="https://www.rolex.com/" class="shop-now-btn" target="_blank">Learn More</a>
+        </div>
+    </section>
+    <main class="main-content">
+        <section class="products-section">
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <a href="https://www.rolex.com/watches/cosmograph-daytona" target="_blank">
+                        <div class="product-badge">Benjamin Button</div>
+                        <div class="product-image">
+                            <img src="Снимок экрана 2026-01-23 084232.png" alt="Luxury Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Ampus Cosmo De Milancelos Scelerisque</h3>
+                            <div class="product-price">
+                                <div class="msrp">MSRP:</div>
+                                <div class="price-row">
+                                    <span class="was">Was: 899.00tg</span>
+                                    <span class="now">Now: 839.00tg</span>
+                                </div>
+                            </div>
+                            <p class="product-description">Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                sollicitudin delos felis. Pellentesquae diam dolor an elementum et lobortis at mollis ut
+                                risus. Curabitur semper sagittis mino de...</p>
+                            <div class="add-to-cart-btn">View on Rolex.com</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="https://www.rolex.com/watches/submariner" target="_blank">
+                        <div class="product-badge">Benjamin Button</div>
+                        <div class="product-image">
+                            <img src="Снимок экрана 2026-01-23 084252.png" alt="Luxury Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Minterdum AnDacony Maliduet</h3>
+                            <div class="product-price">
+                                <div class="msrp">MSRP: 1,299.00tg</div>
+                                <div class="price-row">
+                                    <span class="was">Was: 1,299.00tg</span>
+                                    <span class="now">Now: 899.00tg</span>
+                                </div>
+                            </div>
+                            <p class="product-description">Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                sollicitudin delos felis. Pellentesquae diam dolor an elementum et lobortis at mollis ut
+                                risus. Curabitur semper sagittis mino de...</p>
+                            <div class="add-to-cart-btn">View on Rolex.com</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="https://www.rolex.com/watches/gmt-master-ii" target="_blank">
+                        <div class="product-badge">Tomorrow</div>
+                        <div class="product-image">
+                            <img src="Снимок экрана 2026-01-23 084313.png" alt="Luxury Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Nullam commodo merato dano cosmopolis</h3>
+                            <div class="product-price">
+                                <div class="msrp">MSRP:</div>
+                                <div class="price-row">
+                                    <span class="was">Was:</span>
+                                    <span class="now">Now: 869.99tg</span>
+                                </div>
+                            </div>
+                            <p class="product-description">Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                sollicitudin delos felis. Pellentesquae diam dolor an elementum et lobortis at mollis ut
+                                risus. Curabitur semper sagittis mino de...</p>
+                            <div class="add-to-cart-btn">View on Rolex.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="products-section">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <a href="https://www.rolex.com/watches/datejust" target="_blank">
+                        <div class="product-badge">Sodling</div>
+                        <div class="product-image">
+                            <img src="Снимок экрана 2026-01-23 084357.png" alt="Luxury Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Turpis At Metus Scelerisque Placerat</h3>
+                            <div class="product-price">
+                                <div class="msrp">MSRP:</div>
+                                <div class="price-row">
+                                    <span class="was">Was:</span>
+                                    <span class="now">Now: 469.00tg</span>
+                                </div>
+                            </div>
+                            <p class="product-description">Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                sollicitudin delos felis. Pellentesquae diam dolor an elementum et lobortis at mollis ut
+                                risus. Curabitur semper sagittis mino de...</p>
+                            <div class="add-to-cart-btn">View on Rolex.com</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="https://www.rolex.com/watches/explorer" target="_blank">
+                        <div class="product-badge">Benjamin Button</div>
+                        <div class="product-image">
+                            <img src="Снимок экрана 2026-01-23 084417.png" alt="Luxury Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Dulla Minterdum Dacony</h3>
+                            <div class="product-price">
+                                <div class="msrp">MSRP: 1,299.00tg</div>
+                                <div class="price-row">
+                                    <span class="was">Was: 1,299.00tg</span>
+                                    <span class="now">Now: 1,099.00tg</span>
+                                </div>
+                            </div>
+                            <p class="product-description">Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                sollicitudin delos felis. Pellentesquae diam dolor an elementum et lobortis at mollis ut
+                                risus. Curabitur semper sagittis mino de...</p>
+                            <div class="add-to-cart-btn">View on Rolex.com</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="https://www.rolex.com/watches/yacht-master" target="_blank">
+                        <div class="product-badge">Benjamin Button</div>
+                        <div class="product-image">
+                            <img src="Снимок экрана 2026-01-23 084440.png" alt="Luxury Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Diverra Dulla Minterdum AnDacony Maliduet</h3>
+                            <div class="product-price">
+                                <div class="msrp">MSRP: 899.99tg</div>
+                                <div class="price-row">
+                                    <span class="was">Was: 899.99tg</span>
+                                    <span class="now">Now: 869.99tg</span>
+                                </div>
+                            </div>
+                            <p class="product-description">Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                sollicitudin delos felis. Pellentesquae diam dolor an elementum et lobortis at mollis ut
+                                risus. Curabitur semper sagittis mino de...</p>
+                            <div class="add-to-cart-btn">View on Rolex.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <h2>Join Our Mailing List</h2>
+                <p>Be the first to know about new arrivals, exclusive offers, and insider updates.</p>
+                <a href="https://www.rolex.com/subscribe" class="add-to-cart-btn" target="_blank" style="max-width: 200px; margin: 0 auto; display: block;">Subscribe on Rolex.com</a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Rolex</h3>
+                <p>Premium timepieces for the discerning collector. Timeless elegance meets modern craftsmanship.</p>
+                <a href="https://www.rolex.com/about-rolex" class="add-to-cart-btn" target="_blank" style="margin-top: 15px; background-color: transparent; border: 1px solid #b8860b;">About Rolex</a>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://www.rolex.com/" target="_blank">Home</a></li>
+                    <li><a href="https://www.rolex.com/watches" target="_blank">Shop All</a></li>
+                    <li><a href="https://www.rolex.com/rolex-watches/best-sellers" target="_blank">Best Sellers</a></li>
+                    <li><a href="https://www.rolex.com/new-watches" target="_blank">New Arrivals</a></li>
+                    <li><a href="https://www.rolex.com/rolex-watches/collections" target="_blank">Collections</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="https://www.rolex.com/services/repair-services" target="_blank">Services</a></li>
+                    <li><a href="https://www.rolex.com/contact" target="_blank">Contact Us</a></li>
+                    <li><a href="https://www.rolex.com/legal-notices/cookies" target="_blank">Privacy Policy</a></li>
+                    <li><a href="https://www.rolex.com/stores" target="_blank">Find a Store</a></li>
+                    <li><a href="https://www.rolex.com/rolex-world" target="_blank">Rolex World</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Rolex</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/rolex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rolex" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/rolex" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/user/rolex" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <a href="https://www.rolex.com/contact" class="add-to-cart-btn" target="_blank" style="margin-top: 20px;">Contact Rolex</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rolex. All rights reserved. | <a href="https://www.rolex.com/" style="color: #b8860b; text-decoration: none;" target="_blank">Official Rolex Website</a></p>
+        </div>
+    </footer>
+</body>
+</html>

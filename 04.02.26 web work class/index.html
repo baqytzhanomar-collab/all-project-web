@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="counter">
+<button class="minus1">-</button>
+<span id="count1">0</span>
+<button class="plus1">+</button>
+</div>
+<div class="counter">
+<button class="minus2">-</button>
+<span id="count2">0</span>
+<button class="plus2">+</button>
+</div>
+<div class="counter">
+<button class="minus3">-</button>
+<span id="count3">0</span>
+<button class="plus3">+</button>
+</div>
+<hr>
+<p>Total: <span id="total">0</span></p>
+<form id="form">
+    <button id="submit">Submit</button>
+</form>
+</body>
+</html>
+<script>
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
+const countEl1 = document.getElementById("count1");
+const countEl2 = document.getElementById ("count2") ;
+const countE13 = document.getElementById ("count3");
+const totalEl = document-getElementById ("total" );
+const submitBtn = document.getElementById ("submit");
+const form = document.getElementById ("form");
+function updateTotal() {
+const total = count1 + count2 + count3;
+totalEl. textContent = total;
+submitBtn.disabled = total === 0;
+}
+document.querySelector(".plus1") .addEventListener("click", () => {
+count1++;
+countEl1. textContent = count1;
+updateTotal();
+});
+document.querySelector(".minus1") -addEventListener("click", () => { 
+if (count1 > 0) {
+count1--;
+countEl1.textContent = count1;
+updateTotal();
+}
+}) ;
+document.querySelector (".plus2") -addEventListener("click", () => {
+count2++;
+countEl2.textContent = count2;
+updateTotal();
+}) ;
+document. querySelector (".minus2") -addEventListener("click", () => { 
+if (count2 > 0) {
+     count2--;
+countEl2. textContent = count2;
+updateTotal();
+}
+});
+/* Counter 3 */
+document.querySelector(".plus3") .addEventListener("click", () => {
+count3++;
+countE13. textContent = count3;
+updateTotal();
+});
+document.querySelector (".minus3") .addEventListener("click", () => {
+if (count3 > 0) {
+count3--;
+countEl3. textContent = count3;
+updateTotal();
+}
+});
+/* Submit */
+form.addEventListener ("submit", (event) => {
+event.preventDefault();
+alert("Form submitted!");
+});
+</script>

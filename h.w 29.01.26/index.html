@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {  
+      margin: 0;
+      min-height: 100px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    form, .classof {
+      background: #fff;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+    }
+
+    .classof {
+      max-height: 280px;
+      overflow-y: auto;
+      padding: 20px;
+      font-size: 15px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #1e3c72;
+      font-size: 26px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #2b0b0b;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      background: #1e3c72;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #16325c; }
+
+    .classof p { margin: 6px 0; }
+    .classof span { font-weight: 600; color: #1e3c72; }
+
+    
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <form id="studentForm">
+    <h2>Student Information</h2>
+
+    <label>Name</label>
+    <input type="text" id="nameInput" required>
+
+    <label>Surname</label>
+    <input type="text" id="surnameInput" required>
+
+    <label>Age</label>
+    <input type="number" id="ageInput" required>
+
+    <label>Email</label>
+    <input type="email" id="emailInput" required>
+
+    <label>Class</label>
+    <input type="text" id="classInput">
+
+    <label>City</label>
+    <input type="text" id="cityInput">
+
+    <label>About me</label>
+    <textarea id="aboutInput" placeholder="Short description about yourself"></textarea>
+
+    <button type="submit">Save Profile</button>
+  </form>
+
+  <div class="classof">
+    <h2>Student Profile</h2>
+    <p>Name: <span id="profileName">—</span></p>
+    <p>Surname: <span id="profileSurname">—</span></p>
+    <p>Age: <span id="profileAge">—</span></p>
+    <p>Email: <span id="profileEmail">—</span></p>
+    <p>Class: <span id="profileClass">—</span></p>
+    <p>City: <span id="profileCity">—</span></p>
+    <p>About: <span id="profileAbout">—</span></p>
+  </div>
+
+</div>
+
+<script src="js.js">
+</script>
+
+</body>
+</html>

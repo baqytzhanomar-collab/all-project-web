@@ -1,0 +1,1127 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.promo-banner {
+    background: linear-gradient(90deg, #0078d4 0%, #0063b1 100%);
+    color: white;
+    padding: 10px 0;
+    position: relative;
+}
+
+.promo-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.promo-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.promo-divider {
+    opacity: 0.7;
+}
+
+.promo-link {
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.promo-close {
+    position: absolute;
+    right: 20px;
+    color: white;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.promo-close:hover {
+    opacity: 1;
+}
+
+/* Header */
+.main-header {
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-top {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.header-link {
+    font-size: 12px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.header-link:hover {
+    color: #0078d4;
+}
+
+.dot {
+    color: #999;
+    font-size: 10px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+}
+
+.disney-logo {
+    font-family: 'Waltograph', 'Pacifico', cursive;
+    font-size: 32px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.store-logo {
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.icon-btn {
+    font-size: 13px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.icon-btn:hover {
+    color: #0078d4;
+}
+
+.icon-btn i {
+    font-size: 18px;
+}
+
+/* Main Navigation */
+.main-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 15px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+.nav-link:hover {
+    color: #0078d4;
+}
+
+.sale-link {
+    color: #e31837;
+}
+
+.sale-link:hover {
+    color: #c41230;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 8px 15px;
+    width: 250px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    flex: 1;
+    outline: none;
+    color: #666;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.search-btn {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #ffd966 0%, #ffcc33 100%);
+    padding: 40px 0;
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.9);
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle strong {
+    font-weight: 700;
+}
+
+.hero-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-link {
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.hero-link:hover {
+    color: #000;
+}
+
+.link-divider {
+    color: #333;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Featured Section (Get Schooled) */
+.featured-section {
+    background: linear-gradient(90deg, #e8ddd0 0%, #d4c4b0 50%, #c9b8a0 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-section::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1521577352947-9bb58764b69a?w=800') center/cover;
+    opacity: 0.9;
+}
+
+.featured-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.featured-text {
+    max-width: 400px;
+}
+
+.featured-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.featured-desc {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.featured-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.featured-btn:hover {
+    background: #333;
+    color: white;
+}
+
+/* Brands Section */
+.brands-section {
+    background: #fff5f5;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.brands-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.brand-card {
+    text-align: center;
+}
+
+.brand-image {
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.brand-card:hover .brand-image img {
+    transform: scale(1.05);
+}
+
+.brand-link {
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.brand-link:hover {
+    color: #0078d4;
+}
+
+/* Plush Section */
+.plush-section {
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), 
+                url('https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1200') center/cover;
+    padding: 100px 0;
+    color: white;
+}
+
+.plush-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.plush-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.plush-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.plush-desc {
+    font-size: 16px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.plush-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.plush-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Dash Section */
+.dash-section {
+    background: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.dash-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dash-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.dash-categories {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.dash-item {
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.dash-item:hover {
+    color: #0078d4;
+}
+
+/* Muppets Section */
+.muppets-section {
+    background: linear-gradient(90deg, #f5f5f5 0%, #e8e8e8 50%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.muppets-section::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800') center/cover;
+}
+
+.muppets-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.muppets-text {
+    max-width: 400px;
+}
+
+.muppets-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.muppets-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.muppets-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.muppets-btn:hover {
+    background: #333;
+    color: white;
+}
+
+/* Rain Section */
+.rain-section {
+    background: #e8f4fc;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.rain-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.rain-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.rain-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.rain-link {
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.rain-link:hover {
+    color: #0078d4;
+}
+
+/* Trending Section */
+.trending-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.products-carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    flex: 1;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-image {
+    position: relative;
+    margin-bottom: 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.product-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4caf50;
+    color: white;
+    padding: 3px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.product-name {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Sale Banner */
+.sale-banner {
+    background: linear-gradient(135deg, #5c4ce0 0%, #7b68ee 100%);
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sale-content {
+    padding: 0 50px;
+    flex: 1;
+}
+
+.sale-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.sale-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.sale-btn:hover {
+    background: #f5f5f5;
+}
+
+.sale-graphic {
+    padding: 0 50px;
+}
+
+.sale-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 80px;
+    color: white;
+    opacity: 0.9;
+}
+
+/* Picked Section */
+.picked-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.picked-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Categories Section */
+.categories-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.categories-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.category-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.category-link {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    font-weight: 500;
+    background: white;
+}
+
+.category-link:hover {
+    color: #0078d4;
+}
+
+/* Visa Banner */
+.visa-banner {
+    background: linear-gradient(135deg, #4a6fc9 0%, #3d5aa8 100%);
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 60px auto;
+}
+
+.visa-content {
+    padding: 0 50px;
+    flex: 1;
+}
+
+.visa-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.visa-amount {
+    font-size: 72px;
+    font-weight: 300;
+    display: block;
+    line-height: 1;
+}
+
+.visa-terms {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 15px;
+}
+
+.visa-link {
+    font-size: 14px;
+    color: white;
+    text-decoration: underline;
+}
+
+.visa-cards {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.visa-card-item {
+    text-align: center;
+    color: white;
+}
+
+.card-amount {
+    font-size: 48px;
+    font-weight: 300;
+    display: block;
+}
+
+.card-text {
+    font-size: 12px;
+    opacity: 0.9;
+    max-width: 150px;
+}
+
+.visa-plus {
+    font-size: 36px;
+    color: white;
+    font-weight: 300;
+}
+
+/* Footer */
+.main-footer {
+    background: white;
+    border-top: 1px solid #e5e5e5;
+    padding: 50px 20px 30px;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.newsletter-text {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.signup-btn {
+    padding: 10px 20px;
+    background: #0078d4;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.signup-btn:hover {
+    background: #0063b1;
+}
+
+.privacy-link {
+    font-size: 12px;
+    color: #666;
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.social-link:hover {
+    background: #0078d4;
+}
+
+.footer-links {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    font-size: 13px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #0078d4;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.legal-links a {
+    font-size: 11px;
+    color: #666;
+}
+
+.legal-links a:hover {
+    color: #0078d4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-list {
+        display: none;
+    }
+    
+    .products-grid,
+    .picked-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-left {
+        display: none;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .products-grid,
+    .picked-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .visa-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .visa-cards {
+        flex-direction: column;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .sale-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sale-text {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid,
+    .picked-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dash-categories {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .rain-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

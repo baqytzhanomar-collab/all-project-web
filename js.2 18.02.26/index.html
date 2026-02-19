@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game UI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, #1a1a3d, #090916);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Animated background glow */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #ff00cc55, transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation: float 6s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00f0ff55, transparent 70%);
+  bottom: -200px;
+  right: -200px;
+  animation: float 8s infinite alternate-reverse ease-in-out;
+  z-index: -1;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
+}
+
+/* NAV */
+
+nav {
+  padding: 25px;
+  text-align: center;
+}
+
+#menu {
+  display: inline-flex;
+  gap: 25px;
+  list-style: none;
+}
+
+#menu li {
+  cursor: pointer;
+  padding: 10px 22px;
+  border: 2px solid #00f0ff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#menu li:hover {
+  background: #00f0ff;
+  color: #000;
+  box-shadow: 0 0 15px #00f0ff, 0 0 40px #00f0ff;
+  transform: scale(1.1);
+}
+
+#menu li.active {
+  background: #ff00cc;
+  border-color: #ff00cc;
+  box-shadow: 0 0 15px #ff00cc, 0 0 40px #ff00cc;
+}
+
+/* CONTENT */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.page {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  pointer-events: none;
+  text-align: center;
+  max-width: 600px;
+}
+
+.page.active-page {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.page h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.page p {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Neon card frame */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border: 2px solid #00f0ff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00f0ff, inset 0 0 20px #00f0ff;
+  z-index: -1;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <ul id="menu">
+    <li data-page="home" class="active">Home</li>
+    <li data-page="about">About</li>
+    <li data-page="services">Services</li>
+    <li data-page="contact">Contact</li>
+  </ul>
+</nav>
+
+<main>
+  <section data-content="home" class="page active-page">
+    <h2>Level 1: Home</h2>
+    <p>Welcome player! Your mission starts here. Navigate through the menu to explore.</p>
+  </section>
+
+  <section data-content="about" class="page">
+    <h2>About The Game</h2>
+    <p>This interface is designed in a futuristic neon gaming style.</p>
+  </section>
+
+  <section data-content="services" class="page">
+    <h2>Power Ups</h2>
+    <p>Web Design • Development • Creative UI Effects</p>
+  </section>
+
+  <section data-content="contact" class="page">
+    <h2>Contact HQ</h2>
+    <p>Send transmission to: info@mail.com</p>
+  </section>
+</main>
+
+<script>
+const menuItems = document.querySelectorAll('#menu li');
+const pages = document.querySelectorAll('.page');
+
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+
+    menuItems.forEach(i => i.classList.remove('active'));
+    pages.forEach(p => p.classList.remove('active-page'));
+
+    item.classList.add('active');
+    const pageToShow = item.getAttribute('data-page');
+    document
+      .querySelector(`[data-content="${pageToShow}"]`)
+      .classList.add('active-page');
+  });
+});
+</script>
+
+</body>
+</html>

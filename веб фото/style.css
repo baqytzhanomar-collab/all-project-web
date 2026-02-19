@@ -1,0 +1,246 @@
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background:#e9efef;
+  color:#1f2a2a;
+}
+
+.wrap{
+  height:100vh;
+  display:flex
+}
+
+.left{
+  width:280px;
+  background:#fff;
+  border-right:1px solid #e6eded;
+  padding:16px;
+  overflow:auto;
+}
+.leftHead{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:12px
+}
+
+.name{
+  font-weight:800;
+  font-size:14px
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menuA {
+  display: flex;
+  align-items: center;     
+  gap: 10px;
+  text-decoration: none;
+  color: #1f2a2a;
+  padding: 9px 10px;
+  border-radius: 10px;
+}
+
+.menuA img {
+  width: 20px;
+  height: 25px;
+}
+
+.menuA.on {
+  background: #eef4f4;
+}
+
+
+.small{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:#7b8a8a;
+  margin:10px 0
+}
+.checks{
+  display:flex;
+  flex-direction:column;
+  gap:10px
+}
+.checks label{
+  display:grid;
+  grid-template-columns:18px 1fr auto;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  color:#6b7a7a;
+}
+.checks input{
+  width:14px;
+  height:14px;
+  accent-color:#0f3d39
+}
+.checks em{
+  font-style:normal;
+  background:#eef4f4;
+  border-radius:999px;
+  padding:2px 8px;
+  font-size:12px;
+  color:#5d6d6d
+}
+
+.right{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column
+}
+.bar{
+  background:#fff;
+  border-bottom:1px solid #e6eded;
+  padding:14px 18px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;align-items:center;
+}
+.inp{
+  flex:1;
+  max-width:560px;
+  background:#f6f9f9;
+  border:1px solid #e6eded;
+  border-radius:12px;
+  padding:10px 12px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.inp input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent
+}
+
+.barR{
+  display:flex;
+  gap:12px;
+  align-items:center
+}
+.b{
+  border:1px solid #e6eded;
+  background:#fff;
+  border-radius:12px;
+  padding:10px 14px;
+  font-weight:800;
+  cursor:pointer
+}
+.b.green{
+  background:#0f3d39;
+  color:#fff;
+  border-color:rgba(0,0,0,.08)
+}
+.ava{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  background:#dfe8e8;
+  border:2px solid #eef4f4
+}
+
+.page{
+  padding:22px;
+  overflow:auto}
+.pageTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px
+}
+h2{
+  margin:0;
+  font-size:18px
+}
+
+
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px
+}
+
+
+.c{
+  background:#fff;border:1px solid #e6eded;
+  border-radius:13px;
+  width:calc(33.333% - 12px);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+
+.cTop{
+  padding:14px 13px 10px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px
+}
+.l{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  min-width:0
+}
+
+.ic.black{
+  background:#111;
+  color:#fff
+}
+.ic.mint{
+  background:#e9f6f6;
+  color:#2f6d74
+}
+.ic.peach{
+  background:#fff1e8;
+  color:#b4581e
+}
+.ic.blue{
+  background:#ecf2ff;
+  color:#2a56c6
+}
+.ic.sky{
+  background:#eaf6ff;
+  color:#2a7aa7
+}
+.ic.pink{
+  background:#ffecec;
+  color:#c62828
+}
+
+.t{font-weight:900;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.u{font-size:12px;color:#6b7a7a;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.m{width:34px;height:34px;border-radius:12px;border:1px solid #e6eded;background:#f7fbfb;cursor:pointer}
+
+.c p{
+  margin:0;padding:0 14px 10px;
+  color:#6b7a7a;font-size:13px;line-height:1.45;
+  min-height:56px;
+}
+
+.tg{padding:0 14px 12px;display:flex;gap:8px;flex-wrap:wrap}
+.tg span{
+  background:#eef3f3;border:1px solid #e7eeee;border-radius:999px;
+  padding:5px 10px;font-weight:800;font-size:12px;color:#415252;
+}
+
+.cBot{
+  margin-top:auto;border-top:1px solid #e6eded;
+  padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.cBot small{color:#6b7a7a}
+.imgg{
+  border-radius: 10px;
+}
+.img{
+  border-radius: 30px;
+}

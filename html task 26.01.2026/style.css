@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f1115;
+  color: #d1d5db;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 3px;
+}
+
+.best-score {
+  font-size: 14px;
+}
+
+
+.info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  font-size: 16px;
+}
+
+.red-text {
+  color: #ef4444;
+}
+
+.yellow-text {
+  color: #facc15;
+}
+
+
+.buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  background: none;
+  border: 1px solid #374151;
+  color: #d1d5db;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.active-btn {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+
+
+.text-block {
+  font-size: 26px;
+}
+
+.typed-text {
+  margin-bottom: 18px;
+}
+
+.correct-word {
+  color: #22c55e;
+}
+
+.wrong-word {
+  color: #ef4444;
+  text-decoration: underline;
+}
+
+.next-text {
+  color: #6b7280;
+}

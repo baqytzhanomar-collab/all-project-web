@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top-header">
+  <div class="top-left">
+    <span class="burger">☰</span>
+    <span class="logo">MARKDOWN</span>
+  </div>
+
+  <div class="top-doc">
+    <span class="doc-label">Document Name</span>
+    <span class="doc-name">welcome.md</span>
+  </div>
+
+  <button class="save-btn">Save Changes</button>
+</header>
+
+<div class="main">
+
+  <div class="panel">
+    <div class="panel-header">MARKDOWN</div>
+    <pre class="editor-text">
+# Welcome to Markdown
+
+Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
+
+## How to use this?
+
+1. Write markdown in the markdown editor window
+2. See the rendered markdown in the preview window
+
+### Features
+
+- Create headings, paragraphs, links, blockquotes, inline-code, code blocks, and lists
+- Name and save the document to access again later
+- Choose between Light or Dark mode depending on your preference
+
+> This is an example of a blockquote. If you would like to learn more about markdown syntax, you can visit this [markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/).
+
+#### Headings
+
+To create a heading, add the hash sign (#) before the heading. The number of number signs you use should correspond to the heading level. You'll see in this guide that we've used all six heading levels (not necessarily in the correct way you should use headings!) to illustrate how they should look.
+
+##### Lists
+
+You can see examples of ordered and unordered lists above.
+
+###### Code Blocks
+
+This markdown editor allows for inline-code snippets, like this: <p>I'm inline</p>. It also allows for larger code blocks like this:
+<p>
+&lt;main&gt;
+  &lt;h1&gt;This is a larger code block&lt;/h1&gt;
+&lt;/main&gt;
+</p>
+    </pre>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header preview-header">
+      <span>PREVIEW</span>
+    </div>
+
+    <div class="preview-content">
+      <h1>Welcome to Markdown</h1>
+      <p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.</p>
+
+      <h2>How to use this?</h2>
+      <ol>
+        <li>Write markdown in the markdown editor window</li>
+        <li>See the rendered markdown in the preview window</li>
+      </ol>
+
+      <h2>Features</h2>
+      <ul>
+        <li>Create headings, paragraphs, links, blockquotes, inline-code, code blocks, and lists</li>
+        <li>Name and save the document to access again later</li>
+        <li>Choose between Light or Dark mode depending on your preference</li>
+      </ul>
+
+      <blockquote>
+        This is an example of a blockquote. If you would like to learn more about markdown syntax,
+        you can visit this <a href="#">markdown cheatsheet</a>
+      </blockquote>
+
+      <h3>Headings</h3>
+      <p>
+        To create a heading, add the hash sign (#) before the heading. The number of number signs you use
+        should correspond to the heading level. You'll see in this guide that we've used all six heading levels
+        (not necessarily in the correct way you should use headings!) to illustrate how they should look.
+      </p>
+
+      <h3>Lists</h3>
+      <p>You can see examples of ordered and unordered lists above.</p>
+
+      <h3 class="code-title">Code Blocks</h3>
+      <p>
+        This markdown editor allows for inline-code snippets, like this:
+        <code>&lt;p&gt;I'm inline&lt;/p&gt;</code>.
+        It also allows for larger code blocks like this:
+      </p>
+
+      <pre class="code-block">
+&lt;main&gt;
+  &lt;h1&gt;This is a larger code block&lt;/h1&gt;
+&lt;/main&gt;
+      </pre>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

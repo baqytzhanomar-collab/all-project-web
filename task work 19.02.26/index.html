@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Students App</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  padding: 30px;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input, select, button {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  cursor: pointer;
+  background: #4CAF50;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.student-info {
+  font-size: 14px;
+}
+
+.delete {
+  background: #e53935;
+}
+
+.delete:hover {
+  background: #c62828;
+}
+
+.count {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+  <h2> Students Manager</h2>
+
+  <div class="row">
+    <input id="search" type="text" placeholder="Поиск по имени..." />
+
+    <select id="course">
+      <option value="all">Все курсы</option>
+      <option value="1">1 курс</option>
+      <option value="2">2 курс</option>
+      <option value="3">3 курс</option>
+    </select>
+
+    <input id="ageMin" type="number" placeholder="Возраст от" style="width:100px;">
+    <input id="ageMax" type="number" placeholder="Возраст до" style="width:100px;">
+
+    <select id="sort">
+      <option value="none">Без сортировки</option>
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+      <option value="ageUp">Возраст ↑</option>
+      <option value="ageDown">Возраст ↓</option>
+    </select>
+
+    <button id="reset">Reset</button>
+  </div>
+
+  <div class="row">
+    <input id="newName" placeholder="Имя">
+    <input id="newSurname" placeholder="Фамилия">
+    <input id="newAge" type="number" placeholder="Возраст" style="width:100px;">
+    <select id="newCourse">
+      <option value="1">1 курс</option>
+      <option value="2">2 курс</option>
+      <option value="3">3 курс</option>
+    </select>
+    <button id="add">Добавить</button>
+  </div>
+
+  <div class="count" id="count"></div>
+  <ul id="list"></ul>
+</div>
+
+<script>
+let students = [
+  { name: "Ali", surname: "Nurmaganbetov", age: 18, course: 1 },
+  { name: "Dana", surname: "Sarsembayeva", age: 19, course: 2 },
+  { name: "Aruzhan", surname: "Tulegenova", age: 18, course: 1 },
+  { name: "Nursultan", surname: "Akhmetov", age: 20, course: 3 },
+  { name: "Aigerim", surname: "Beketova", age: 19, course: 2 },
+  { name: "Dias", surname: "Kurmangaliyev", age: 21, course: 3 }
+];
+
+const search = document.querySelector("#search");
+const courseSelect = document.querySelector("#course");
+const sortSelect = document.querySelector("#sort");
+const ageMin = document.querySelector("#ageMin");
+const ageMax = document.querySelector("#ageMax");
+const resetBtn = document.querySelector("#reset");
+const list = document.querySelector("#list");
+const count = document.querySelector("#count");
+
+const addBtn = document.querySelector("#add");
+const newName = document.querySelector("#newName");
+const newSurname = document.querySelector("#newSurname");
+const newAge = document.querySelector("#newAge");
+const newCourse = document.querySelector("#newCourse");
+
+function render(arr) {
+  list.innerHTML = "";
+  count.textContent = `Найдено студентов: ${arr.length}`;
+
+  if (arr.length === 0) {
+    list.innerHTML = "<li>❌ Студенты не найдены</li>";
+    return;
+  }
+
+  arr.forEach((student, index) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <div class="student-info">
+        <strong>${student.name} ${student.surname}</strong><br>
+         Course: ${student.course} | Age: ${student.age}
+      </div>
+      <button class="delete">Удалить</button>
+    `;
+
+    li.querySelector(".delete").addEventListener("click", () => {
+      students.splice(index, 1);
+      update();
+    });
+
+    list.appendChild(li);
+  });
+}
+
+function update() {
+  let filtered = [...students];
+
+  const searchValue = search.value.toLowerCase();
+  if (searchValue) {
+    filtered = filtered.filter(s =>
+      (s.name + " " + s.surname).toLowerCase().includes(searchValue)
+    );
+  }
+
+  if (courseSelect.value !== "all") {
+    filtered = filtered.filter(s => s.course == courseSelect.value);
+  }
+
+  if (ageMin.value) {
+    filtered = filtered.filter(s => s.age >= ageMin.value);
+  }
+
+  if (ageMax.value) {
+    filtered = filtered.filter(s => s.age <= ageMax.value);
+  }
+
+  if (sortSelect.value === "az") {
+    filtered.sort((a,b)=>
+      (a.name + a.surname).localeCompare(b.name + b.surname)
+    );
+  }
+
+  if (sortSelect.value === "za") {
+    filtered.sort((a,b)=>
+      (b.name + b.surname).localeCompare(a.name + a.surname)
+    );
+  }
+
+  if (sortSelect.value === "ageUp") {
+    filtered.sort((a,b)=> a.age - b.age);
+  }
+
+  if (sortSelect.value === "ageDown") {
+    filtered.sort((a,b)=> b.age - a.age);
+  }
+
+  render(filtered);
+}
+
+search.addEventListener("input", update);
+courseSelect.addEventListener("change", update);
+sortSelect.addEventListener("change", update);
+ageMin.addEventListener("input", update);
+ageMax.addEventListener("input", update);
+
+resetBtn.addEventListener("click", () => {
+  search.value = "";
+  courseSelect.value = "all";
+  sortSelect.value = "none";
+  ageMin.value = "";
+  ageMax.value = "";
+  render(students);
+});
+
+addBtn.addEventListener("click", () => {
+  if (!newName.value || !newSurname.value || !newAge.value) return;
+
+  students.push({
+    name: newName.value,
+    surname: newSurname.value,
+    age: Number(newAge.value),
+    course: Number(newCourse.value)
+  });
+
+  newName.value = "";
+  newSurname.value = "";
+  newAge.value = "";
+
+  update();
+});
+
+render(students);
+</script>
+
+</body>
+</html>

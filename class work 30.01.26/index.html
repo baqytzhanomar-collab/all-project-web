@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Tasks</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  
+  #shape {
+    width: 100px;
+    height: 100px;
+    background: teal;
+    margin-bottom: 10px;
+  }
+
+  .rectangle {
+    width: 200px;
+    height: 100px;
+  }
+
+
+  .dark {
+    background: brown;
+    color: beige;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>TASK 1 - Change Shape</h2>
+<div id="shape"></div>
+<button onclick="toggleShape()">Change Shape</button>
+
+<hr>
+
+<h2>TASK 2 -  Show / Hide Block</h2>
+<div id="block">Hello! I can hide.</div>
+<button onclick="toggleBlock()">Show / Hide</button>
+
+<hr>
+
+<h2>TASK 3 – Dark Mode</h2>
+<button onclick="toggleDark()">Dark Mode</button>
+
+<hr>
+
+<h2>TASK 4 – Toggle Message</h2>
+<p id="message">This is a message</p>
+<button onclick="toggleMessage()">Toggle Message</button>
+
+<hr>
+
+<h2>TASK 5 – Input Live</h2>
+<input type="text" id="liveInput" placeholder="Type here...">
+<p id="liveOutput"></p>
+
+<hr>
+
+<h2>TASK 6 – Form Submit</h2>
+<form id="myForm">
+  <input type="text" placeholder="Name">
+  <button type="submit">Submit</button>
+</form>
+<p id="formMsg"></p>
+
+<hr>
+
+<h2>TASK 7 – Radio Select Color</h2>
+<label><input type="radio" name="color" value="Red"> Red</label>
+<label><input type="radio" name="color" value="Blue"> Blue</label>
+<label><input type="radio" name="color" value="Green"> Green</label>
+<br><br>
+<button onclick="showColor()">Show Selected Color</button>
+<p id="colorResult"></p>
+
+<script>
+
+function toggleShape() {
+  const shape = document.getElementById("shape");
+  shape.classList.toggle("rectangle");
+}
+
+function toggleBlock() {
+  const block = document.getElementById("block");
+  block.classList.toggle("hidden");
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+
+
+function toggleMessage() {
+  const msg = document.getElementById("message");
+  msg.classList.toggle("hidden");
+}
+
+
+const liveInput = document.getElementById("liveInput");
+const liveOutput = document.getElementById("liveOutput");
+
+liveInput.addEventListener("input", function() {
+  liveOutput.textContent = liveInput.value;
+});
+
+
+const form = document.getElementById("myForm");
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("formMsg").textContent = "Form submitted";
+});
+
+function showColor() {
+  const selected = document.querySelector('input[name="color"]:checked');
+  const result = document.getElementById("colorResult");
+
+  if (selected) {
+    result.textContent = "Selected color: " + selected.value;
+  } else {
+    result.textContent = "Select a color";
+  }
+}
+</script>
+
+test 
+<div class="font">
+    test 1
+    C) textContent
+</div>
+<div class="2">
+    test 2 B) #box
+</div>
+<div class="3">
+  test 3  C) Selects elements by id only
+</div>
+<div class="4">
+    test 4 B) checked
+</div>
+<div class="5">
+    test 5 A) textContent
+</div>
+<div class="6">
+    test 6 first code 
+</div>
+
+
+</body>
+</html>

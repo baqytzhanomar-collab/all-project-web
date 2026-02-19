@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.card h4 {
+    margin: 0;
+}
+
+.card span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.title {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.text {
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.card-purple {
+    background-color: rgb(134, 64, 163);
+    color: white;
+    grid-column: span 2;
+}
+
+.card-dark {
+    background-color: gray;
+    color: white;
+}
+
+.card-white {
+    background-color: white;
+    color: black;
+    grid-row: span 2;
+}
+
+.card-light {
+    background-color: white;
+    color: black;
+}
+
+.card-black {
+    background-color: black;
+    color: white;
+    grid-column: span 2;
+}

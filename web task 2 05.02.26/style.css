@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #0b1324;
+    color: white;
+}
+
+.site-header {
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    height: 30px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #ccc;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-image {
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+.hero-section button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    background: #4ccfd9;
+    cursor: pointer;
+}
+
+.features-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 900px;
+    margin: 100px auto;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-item img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.productivity-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.productivity-section img {
+    width: 400px;
+}
+
+.productivity-text a {
+    color: #4ccfd9;
+    text-decoration: none;
+    border-bottom: 1px solid #4ccfd9;
+}
+
+.reviews-section {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.review-card {
+    background: #1b2a4a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.reviewer img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.signup-section {
+    background: #1b2a4a;
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.signup-section input {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    width: 60%;
+}
+
+.signup-section button {
+    padding: 12px 25px;
+    border-radius: 20px;
+    border: none;
+    background: #4ccfd9;
+    margin-left: 10px;
+}
+
+.site-footer {
+    background: #060b1a;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-footer a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.contact-location{
+    margin-top: 50px;
+    margin-left: -340px;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phone-info, .email-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.phone-info img, .email-info img {
+    width: 30px;
+    height: 30px;
+}
+.site-logo{
+    height: 30px;
+}

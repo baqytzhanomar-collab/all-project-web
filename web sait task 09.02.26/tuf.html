@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Store | Official Merchandise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.top-banner {
+    background: linear-gradient(90deg, #1a5f7a, #2e8b8b);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.top-banner a {
+    color: white;
+    text-decoration: underline;
+}
+
+.header {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.header-links a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 13px;
+}
+
+.header-links a:hover {
+    color: #1a5f7a;
+}
+
+.logo h1 {
+    color: #1a5f7a;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-btn .count {
+    font-size: 11px;
+    background: #1a5f7a;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 40px;
+}
+
+.main-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #1a5f7a;
+}
+
+.main-nav a.sale {
+    color: #c41e3a;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1a5f7a 0%, #2e8b8b 100%);
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.hero .badge {
+    background: #c41e3a;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin: 20px 0 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: #1a5f7a;
+}
+
+.btn-primary:hover {
+    background: #f0f0f0;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #1a5f7a;
+}
+
+.products-section {
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    position: relative;
+    padding: 20px;
+    background: #f8f8f8;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.wishlist-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+.limited-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #1a5f7a;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.limited-badge i {
+    margin-right: 3px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    height: 60px;
+    overflow: hidden;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.new {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status.coming-soon {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.launch-date {
+    font-size: 11px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.quick-shop-card-btn {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: white;
+    color: #1a5f7a;
+    border: 2px solid #1a5f7a;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.quick-shop-card-btn:hover {
+    background: #1a5f7a;
+    color: white;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+.modal-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-image {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
+
+.main-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.thumbnail.active {
+    border-color: #1a5f7a;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-details .limited-badge {
+    position: static;
+    display: inline-block;
+    width: fit-content;
+}
+
+.modal-details h2 {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.modal-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.launch-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.quantity-selector {
+    margin-top: 10px;
+}
+
+.quantity-selector label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.qty-btn:hover {
+    background: #f0f0f0;
+}
+
+.qty-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#qtyInput {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.limit-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.btn-coming-soon {
+    background: #6c757d;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: not-allowed;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-wishlist, .btn-details {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #333;
+    font-size: 14px;
+}
+
+.btn-wishlist:hover, .btn-details:hover {
+    background: #f0f0f0;
+}
+
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 50px 40px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 12px;
+    color: #666;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #1a5f7a 0%, #2e8b8b 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.about-section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.about-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-block.reverse {
+    direction: rtl;
+}
+
+.about-block.reverse > * {
+    direction: ltr;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #1a5f7a;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.stats-section {
+    background: #f0f7f7;
+    padding: 60px 40px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-item i {
+    font-size: 40px;
+    color: #1a5f7a;
+    margin-bottom: 15px;
+}
+
+.stat-item h3 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.contact-section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    color: #1a5f7a;
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact-method i {
+    font-size: 24px;
+    color: #1a5f7a;
+    width: 40px;
+    height: 40px;
+    background: #e8f4f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-method h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-method p {
+    font-size: 15px;
+    color: #555;
+}
+
+.contact-method small a {
+    color: #1a5f7a;
+    text-decoration: none;
+}
+
+.contact-form-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-form-wrapper h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a5f7a;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.faq-section {
+    padding: 60px 40px;
+    background: #f8f8f8;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+    font-size: 16px;
+    color: #1a5f7a;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item h3 i {
+    font-size: 18px;
+}
+
+.faq-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+    
+    .header-links {
+        display: none;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px 20px;
+    }
+    
+    .main-nav a {
+        font-size: 12px;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .about-block {
+        grid-template-columns: 1fr;
+    }
+
+    .about-block.reverse {
+        direction: ltr;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <div class="top-banner">
+        <p>Friends & Family 25% Off! Code: <strong>DISNEYPAL</strong> | <a href="#">See All Offers</a></p>
+    </div>
+
+  
+    <header class="header">
+        <div class="header-top">
+            <div class="header-links">
+                <a href="#">Guest Support</a>
+                <a href="#">Store Locator</a>
+            </div>
+            <div class="logo">
+                <h1>DISNEY STORE</h1>
+            </div>
+            <div class="header-icons">
+                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                <button class="icon-btn"><i class="fas fa-user"></i></button>
+                <button class="icon-btn"><i class="fas fa-heart"></i> <span class="count">0</span></button>
+                <button class="icon-btn"><i class="fas fa-shopping-bag"></i> <span class="count">0</span></button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="sale">Sale</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">ENDS TONIGHT</span>
+            <h2>25% Off Sitewide</h2>
+            <p>With Code: <strong>DISNEYPAL</strong></p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Shop New</a>
+                <a href="#" class="btn btn-secondary">Shop Trending</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <h2 class="section-title">Limited Edition Collection</h2>
+        <div class="products-grid">
+            
+            <div class="product-card" data-product-id="1">
+                <div class="product-image">
+                    <span class="wishlist-btn"><i class="far fa-heart"></i></span>
+                    <img src="disney_store_article_update_v5_mob_3862_m_fc9013a1.jpeg" alt="Willy's Butte Race Track">
+                </div>
+                <div class="product-info">
+                    <h3>Willy's Butte Race Track Playset, Disney Pixar Cars</h3>
+                    <p class="price">£28.00</p>
+                    <span class="status new">New</span>
+                    <button class="quick-shop-card-btn" data-product-id="1">Quick Shop</button>
+                </div>
+            </div>
+
+           
+            <div class="product-card" data-product-id="2">
+                <div class="product-image">
+                    <span class="wishlist-btn"><i class="far fa-heart"></i></span>
+                    <span class="limited-badge"><i class="fas fa-star"></i> LIMITED EDITION</span>
+                    <img src="images.jpeg" alt="Rapunzel Doll">
+                </div>
+                <div class="product-info">
+                    <h3>Rapunzel Spring 2026 Special Edition Doll, Tangled - 27cm</h3>
+                    <p class="price">£45.00</p>
+                    <span class="status new">New</span>
+                    <button class="quick-shop-card-btn" data-product-id="2">Quick Shop</button>
+                </div>
+            </div>
+
+          
+            <div class="product-card" data-product-id="3">
+                <div class="product-image">
+                    <span class="wishlist-btn"><i class="far fa-heart"></i></span>
+                    <span class="limited-badge"><i class="fas fa-star"></i> LIMITED EDITION</span>
+                    <img src="apac_plp_toys_mickeyfriendsplush_s4_1_dm.jpeg" alt="Sharpay Evans Doll">
+                </div>
+                <div class="product-info">
+                    <h3>Sharpay Evans Limited Edition Doll, High School Musical 20th Anniversary - 28cm</h3>
+                    <p class="price">£90.00</p>
+                    <span class="status coming-soon"><i class="fas fa-clock"></i> Coming Soon</span>
+                    <p class="launch-date">Launching 11th February, 8:00am</p>
+                    <button class="quick-shop-card-btn" data-product-id="3">Quick Shop</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="4">
+                <div class="product-image">
+                    <span class="wishlist-btn"><i class="far fa-heart"></i></span>
+                    <span class="limited-badge"><i class="fas fa-star"></i> LIMITED EDITION</span>
+                    <img src="eu_articles_disneystore_introducting_mobhero_95b35962.jpeg" alt="Troy and Gabriella Dolls">
+                </div>
+                <div class="product-info">
+                    <h3>Troy Bolton and Gabriella Montez Limited Edition Collector Doll Set</h3>
+                    <p class="price">£120.00</p>
+                    <span class="status coming-soon"><i class="fas fa-clock"></i> Coming Soon</span>
+                    <p class="launch-date">Launching 11th February, 8:00am</p>
+                    <button class="quick-shop-card-btn" data-product-id="4">Quick Shop</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-content">
+                <div class="modal-gallery">
+                    <div class="main-image">
+                        <img src="" alt="Product" id="modalMainImage">
+                    </div>
+                    <div class="thumbnail-list" id="thumbnailList"></div>
+                </div>
+                <div class="modal-details">
+                    <span class="limited-badge"><i class="fas fa-star"></i> LIMITED EDITION</span>
+                    <h2 id="modalTitle">Product Title</h2>
+                    <p class="modal-price" id="modalPrice">£0.00</p>
+                    <div class="launch-info" id="launchInfo">
+                        <i class="fas fa-clock"></i> <span>Launching 11th February, 8:00am</span>
+                    </div>
+                    <div class="quantity-selector">
+                        <label>Quantity</label>
+                        <div class="qty-controls">
+                            <button class="qty-btn" id="qtyMinus">-</button>
+                            <input type="number" value="1" min="1" max="1" id="qtyInput" readonly>
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                        <p class="limit-note">This item is limited to 1 per Guest.</p>
+                    </div>
+                    <button class="btn btn-coming-soon" id="comingSoonBtn">Coming Soon</button>
+                    <div class="modal-actions">
+                        <button class="btn btn-wishlist"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        <button class="btn btn-details">View Full Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sign up for our emails</h4>
+                <p>Get the inside scoop on special offers and new products.</p>
+                <button class="btn btn-primary">Sign up</button>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i> @DisneyStoreUK</a>
+                    <a href="#"><i class="fab fa-tiktok"></i> Gallery</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Characters</h4>
+                <ul>
+                    <li><a href="#">Disney</a></li>
+                    <li><a href="#">Pixar</a></li>
+                    <li><a href="#">Marvel</a></li>
+                    <li><a href="#">Star Wars</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Gift Finder</h4>
+                <ul>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                    <li><a href="#">Personalisation Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Brand Ambassadors</h4>
+                <ul>
+                    <li><a href="#">Student Discount</a></li>
+                    <li><a href="#">Outlet</a></li>
+                    <li><a href="#">Help & FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Store Locator</a></li>
+                    <li><a href="#">Events & Activities</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Disney Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

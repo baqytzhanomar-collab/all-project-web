@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Kanban UI </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<body>
+  <div class="shell">
+
+
+    <div class="navpanel">
+      <div class="navpanel__brand">
+        <div class="navpanel__mark"></div>
+        <p class="navpanel__name">kanban</p>
+      </div>
+
+      <p class="navpanel__meta">ALL BOARDS (8)</p>
+
+      <div class="navpanel__list">
+        <div class="navpanel__item is-active">
+          <div class="navpanel__ic"></div>
+          <p class="navpanel__label">Platform Launch</p>
+        </div>
+
+        <div class="navpanel__item">
+          <div class="navpanel__ic"></div>
+          <p class="navpanel__label">Marketing Plan</p>
+        </div>
+
+        <div class="navpanel__item">
+          <div class="navpanel__ic"></div>
+          <p class="navpanel__label">Roadmap</p>
+        </div>
+
+        <div class="navpanel__item is-create">
+          <div class="navpanel__ic"></div>
+          <p class="navpanel__label">+ Create New Board</p>
+        </div>
+      </div>
+
+      <div class="navpanel__footer">
+        <div class="modebar">
+       
+          <img class="modebar__img" src="WhatsApp Image 2026-02-11 at 15.15.00.jpeg" alt="">
+          <div class="modebar__toggle" id="toggleTheme">
+            <div class="modebar__dot"></div>
+          </div>
+          <img class="modebar__img" src="web task .jpeg" alt="">
+        </div>
+
+        <div class="navpanel__hide">
+          <div class="navpanel__eye"></div>
+          <p style="margin:0;">Hide Sidebar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="bar">
+        <h1 class="bar__title">Platform Launch</h1>
+
+        <div class="bar__tools">
+          <button class="bar__cta" type="button">+ Add New Task</button>
+
+          <div class="bar__more" title="menu">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="laneWrap">
+
+        <div class="lane">
+          <div class="lane__head">
+            <div class="lane__dot"></div>
+            <p class="lane__name">TODO (4)</p>
+          </div>
+
+          <div class="ticket">
+            <p class="ticket__title">Build UI for onboarding flow</p>
+            <p class="ticket__meta">0 of 3 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Build UI for search</p>
+            <p class="ticket__meta">0 of 1 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Build settings UI</p>
+            <p class="ticket__meta">0 of 2 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">QA and test all major user journeys</p>
+            <p class="ticket__meta">0 of 2 subtasks</p>
+          </div>
+        </div>
+
+        <div class="lane">
+          <div class="lane__head">
+            <div class="lane__dot is-purple"></div>
+            <p class="lane__name">DOING (6)</p>
+          </div>
+
+          <div class="ticket">
+            <p class="ticket__title">Design settings and search pages</p>
+            <p class="ticket__meta">1 of 3 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Add account management endpoints</p>
+            <p class="ticket__meta">2 of 3 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Design onboarding flow</p>
+            <p class="ticket__meta">1 of 3 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Add search endpoints</p>
+            <p class="ticket__meta">1 of 2 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Add authentication endpoints</p>
+            <p class="ticket__meta">1 of 2 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Research pricing points of various competitors and trial different business models</p>
+            <p class="ticket__meta">1 of 3 subtasks</p>
+          </div>
+        </div>
+
+        <div class="lane">
+          <div class="lane__head">
+            <div class="lane__dot is-green"></div>
+            <p class="lane__name">DONE (7)</p>
+          </div>
+
+          <div class="ticket">
+            <p class="ticket__title">Conduct 5 wireframe tests</p>
+            <p class="ticket__meta">1 of 1 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Create wireframe prototype</p>
+            <p class="ticket__meta">1 of 1 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Review results of usability tests and iterate</p>
+            <p class="ticket__meta">3 of 3 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Create paper prototypes and conduct 10 usability tests with potential customers</p>
+            <p class="ticket__meta">2 of 2 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Market discovery</p>
+            <p class="ticket__meta">1 of 1 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Competitor analysis</p>
+            <p class="ticket__meta">2 of 2 subtasks</p>
+          </div>
+          <div class="ticket">
+            <p class="ticket__title">Research the market</p>
+            <p class="ticket__meta">2 of 2 subtasks</p>
+          </div>
+        </div>
+
+        <div class="adder">+ New Column</div>
+
+      </div>
+    </div>
+
+  </div>
+  <script src="js.js"></script>
+</body>
+</html>
